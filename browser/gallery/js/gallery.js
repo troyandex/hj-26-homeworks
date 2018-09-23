@@ -4,25 +4,25 @@ const img = document.getElementById('currentPhoto');
 const buttonPrev = document.getElementById('prevPhoto');
 const buttonNext = document.getElementById('nextPhoto');
 
-const links = [
+const images = [
   "i/breuer-building.jpg",
   "i/guggenheim-museum.jpg",
   "i/headquarters.jpg",
   "i/IAC.jpg",
   "i/new-museum.jpg"
 ];
-let i = 0;
+let i = images.indexOf(img.src); // индекс текущего изображения
+
+function changeImg(index) {
+	img.src = images[i];
+}
 
 buttonPrev.onclick = function prevPhoto() {
-  i = links.indexOf(img.src) - 1;
-  if (i < 0) { i = links.length - 1 } // если первый элемент переходим к последнему
-  img.src = links[i];
-  console.log(links[i]);
+	i === 0 ? i = images.length - 1 : --i;
+	changeImg(i);
 };
 
 buttonNext.onclick = function nextPhoto() {
-  i = links.indexOf(img.src) + 1;
-  if (i == links.length) { i = 0 } // если последний элемент переходим к первому
-  img.src = links[i];
-  console.log(links[i]);
+  i == images.length - 1 ? i = 0 : ++i;
+	changeImg(i);
 };
