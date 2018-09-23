@@ -12,6 +12,5 @@ let step = 0;
 
 setInterval(() => {
   img.src = links[step % (links.length - 1)];
-  console.log(step);
   step += 1;
 }, 5000); // шаг 5 секунд */
