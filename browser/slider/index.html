@@ -32,4 +32,28 @@
     </div>
   </section>
 </body>
+
+<script>
+  const img = document.getElementById('slider');
+  console.log(img.src); // http://bit.ly/2nyH0tY
+
+  const links = [
+    "https://netology-code.github.io/hj-homeworks/browser/slider/i/airmax-jump.png",
+    "https://netology-code.github.io/hj-homeworks/browser/slider/i/airmax-on-foot.png",
+    "https://netology-code.github.io/hj-homeworks/browser/slider/i/airmax-playground.png",
+    "https://netology-code.github.io/hj-homeworks/browser/slider/i/airmax-top-view.png",
+    "https://netology-code.github.io/hj-homeworks/browser/slider/i/airmax.png"
+  ];
+  console.log(links.length);
+  console.log((8 % 4));
+  
+  let step = 0;
+
+  setInterval(() => {
+    img.src = links[step % (links.length - 1)];
+    console.log(step);
+    step += 1;
+  }, 5000); // шаг 5 секунд */
+  
+</script>
 </html>
