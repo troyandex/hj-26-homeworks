@@ -38,14 +38,32 @@
 </body>
 
 <script>
+  const img = document.getElementById('slider');
+  console.log(img.src); // http://bit.ly/2nyH0tY
+
+  const links = [
+    "i/breuer-building.jpg",
+    "i/guggenheim-museum.jpg",
+    "i/headquarters.jpg",
+    "i/IAC.jpg",
+    "i/new-museum.jpg"
+  ];
+  console.log(links.length);
+  console.log((8 % 4));
+  const button = document.getElementById('open');
+  button.onclick = function handleClick() {
+    openMail(); 
+  }
+
   
-  /* 
-  breuer-building.jpg;
-  guggenheim-museum.jpg;
-  headquarters.jpg;
-  IAC.jpg;
-  new-museum.jpg.
-  */
+  let step = 0;
+
+  setInterval(() => {
+    img.src = links[step % (links.length - 1)];
+    console.log(step);
+    step += 1;
+  }, 5000); // шаг 5 секунд */
+  
 </script>
 
 </html>
