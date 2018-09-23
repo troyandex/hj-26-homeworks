@@ -52,14 +52,16 @@
 
   buttonPrev.onclick = function prevPhoto() {
     let i = links.indexOf(img.src) - 1;
-    if (i < 0) { i = links.length } // если первый элемент переходим к последнему
+    if (i < 0) { i = links.length - 1 } // если первый элемент переходим к последнему
     img.src = links[i];
+    console.log(links[i]);
   };
 
   buttonNext.onclick = function nextPhoto() {
     let i = links.indexOf(img.src) + 1;
     if (i == links.length) { i = 0 } // если последний элемент переходим к первому
     img.src = links[i];
+    console.log(links[i]);
   };
   
 </script>
