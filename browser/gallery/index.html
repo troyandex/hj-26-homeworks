@@ -38,8 +38,9 @@
 </body>
 
 <script>
-  const img = document.getElementById('slider');
-  console.log(img.src); // http://bit.ly/2nyH0tY
+  const img = document.getElementById('currentPhoto');
+  const buttonPrev = document.getElementById('prevPhoto');
+  const buttonNext = document.getElementById('nextPhoto');
 
   const links = [
     "i/breuer-building.jpg",
@@ -48,21 +49,15 @@
     "i/IAC.jpg",
     "i/new-museum.jpg"
   ];
-  console.log(links.length);
-  console.log((8 % 4));
-  const button = document.getElementById('open');
-  button.onclick = function handleClick() {
-    openMail(); 
+
+  buttonPrev.onclick = function prevPhoto() {
+    let i = links.indexOf(img.src) - 1;
+    img.src = links[i];
   }
-
-  
-  let step = 0;
-
-  setInterval(() => {
-    img.src = links[step % (links.length - 1)];
-    console.log(step);
-    step += 1;
-  }, 5000); // шаг 5 секунд */
+  buttonNext.onclick = function nextPhoto() {
+    let i = links.indexOf(img.src) + 1;
+    img.src = links[i];
+  }
   
 </script>
 
