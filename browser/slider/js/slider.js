@@ -1,8 +1,6 @@
 'use strict';
 
 const img = document.getElementById('slider');
-
-
 const links = [
   "i/airmax-jump.png",
   "i/airmax-on-foot.png",
@@ -10,6 +8,7 @@ const links = [
   "i/airmax-top-view.png",
   "i/airmax.png"
 ];
+
 img.src = links[0]; // сразу ставим первое фото
 
 let step = 1;
