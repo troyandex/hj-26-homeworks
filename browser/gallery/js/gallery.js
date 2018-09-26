@@ -11,7 +11,9 @@ const images = [
   "i/IAC.jpg",
   "i/new-museum.jpg"
 ];
-let i = images.indexOf(img.src); // индекс текущего изображения
+img.src = images[0]; // сразу ставим фото
+let i = 0; // стартовый индекс первого изображения
+
 
 function changeImg(index) {
 	img.src = images[i];
