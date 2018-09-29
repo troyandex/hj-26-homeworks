@@ -100,9 +100,15 @@ btnNext.onclick = () => {
 }
 
 // если песня кончилась - останавливаем и выбираем след. трек
+player.onended = () => {
+		stopSong();
+		changeSong('next');
+}
+
+/* Альтернативный вариант на конец песни - тоже работает
 player.ontimeupdate = function() {
 	if (player.ended) {
 		stopSong();
 		changeSong('next');
 	}
-}
+} */
