@@ -72,14 +72,20 @@ function stopSong() {
 }
 
 function changeSong(direction) {
+	// проверяем статус: play = true / pause = false;
+	let status = !player.paused;
   stopSong();
-  
+  // проверяем направление 
   if (direction == 'back') {
     player.src = prevSong();
   } else if  (direction == 'next') {
     player.src = nextSong();
   } else {
   	throw new Err ('Ошибка выбора следующей песни!');
+  }
+  // если тру - запускаем обратно.
+  if (status) {
+  	playSong();
   }
 }
 
