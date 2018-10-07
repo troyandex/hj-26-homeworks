@@ -36,3 +36,22 @@ function init() {
 }
 
 document.addEventListener('DOMContentLoaded', init);
+
+// Выше исходный код:
+let contactsListUl; 
+let ulContent = '';
+const contacts = JSON.parse(loadContacts());
+
+function changeContactList() { // запускается после загрузки документа
+  // находим <ul class="contacts-list">...<ul>
+  contactsListUl = document.querySelector('.contacts-list');
+
+  for (let i = 0; i < contacts.length; i++) {
+    ulContent += `<li data-email=${contacts[i].email} data-phone="${contacts[i].phone}">
+    <strong>${contacts[i].name}</strong>
+    </li>`;
+  }
+  contactsListUl.innerHTML = ulContent;
+}
+
+document.addEventListener('DOMContentLoaded', changeContactList);
