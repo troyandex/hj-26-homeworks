@@ -6,7 +6,7 @@ xhr.open('GET', 'https://neto-api.herokuapp.com/book/');
 xhr.send();
 
 const content = document.querySelector('#content')
-content.innerHTML ='';
+
 
 function onLoad() {
   if (xhr.status !== 200) {
