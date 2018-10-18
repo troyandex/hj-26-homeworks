@@ -15,9 +15,7 @@ Array.from(sliderNav.getElementsByTagName('a')).forEach(button => {
   button.addEventListener('click', updateSlide);
 });
 
-// исходное состояние:
-let leftStop = true;
-let rightStop = false;
+// первая проверка состяния кнопок:
 updateDisabledButton(); 
 
 // меняет слайд
@@ -31,26 +29,22 @@ function setActiveSlide(newSlide) {
 // основная функция выбор направления
 function updateSlide() {
   // console.log(event.target);
+  if (event.target.classList.contains('disabled')) {
+    return;
+  }
+
   switch (event.target) {
     case nextButton:
-      if (!rightStop) {
-        setActiveSlide(activeSlide.nextElementSibling);
-      } 
+      setActiveSlide(activeSlide.nextElementSibling);
       break;
     case lastButton:
-      if (!rightStop) {
-        setActiveSlide(activeSlide.parentElement.lastElementChild);
-      } 
+      setActiveSlide(activeSlide.parentElement.lastElementChild);
       break;
     case prevButton:
-      if (!leftStop) {
-        setActiveSlide(activeSlide.previousElementSibling);
-      } 
+      setActiveSlide(activeSlide.previousElementSibling);
       break;
     case firstButton:
-      if (!leftStop) {
-        setActiveSlide(activeSlide.parentElement.firstElementChild);
-      } 
+      setActiveSlide(activeSlide.parentElement.firstElementChild);
       break; 
   }
 }
@@ -60,20 +54,16 @@ function updateDisabledButton() {
   if (activeSlide.previousElementSibling) {
     prevButton.classList.remove('disabled');
     firstButton.classList.remove('disabled');
-    leftStop = false;
   } else {
     prevButton.classList.add('disabled');
     firstButton.classList.add('disabled');
-    leftStop = true;
   }
 
   if (activeSlide.nextElementSibling) {
     nextButton.classList.remove('disabled');
     lastButton.classList.remove('disabled');
-    rightStop = false;
   } else {
     nextButton.classList.add('disabled');
     lastButton.classList.add('disabled');
-    rightStop = true;
   }
 }
