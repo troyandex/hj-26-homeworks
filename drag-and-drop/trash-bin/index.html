@@ -6,13 +6,26 @@
 	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-	<img src="https://preview.ibb.co/fXb0Yz/office_2016_1.png" class="logo" style="top: 5px; left: 5px;">
-	<img src="https://preview.ibb.co/dfJEtz/office_2016_2.png" class="logo" style="top: 5px; left: 125px;">
-	<img src="https://preview.ibb.co/jAuhfe/office_2016_3.png" class="logo" style="top: 5px; left: 245px;">
-	<img src="https://preview.ibb.co/mOceRK/office_2016_4.png" class="logo" style="top: 125px; left: 5px;">
-	<img src="https://preview.ibb.co/iqpb6K/office_2016_5.png" class="logo" style="top: 125px; left: 125px;">
-	<img src="https://preview.ibb.co/hGrZtz/office_2016_6.png" class="logo" style="top: 125px; left: 245px;">
+	<img src="https://preview.ibb.co/fXb0Yz/office_2016_1.png" draggable class="logo" style="top: 5px; left: 5px;">
+	<img src="https://preview.ibb.co/dfJEtz/office_2016_2.png" draggable class="logo" style="top: 5px; left: 125px;">
+	<img src="https://preview.ibb.co/jAuhfe/office_2016_3.png" draggable class="logo" style="top: 5px; left: 245px;">
+	<img src="https://preview.ibb.co/mOceRK/office_2016_4.png" draggable class="logo" style="top: 125px; left: 5px;">
+	<img src="https://preview.ibb.co/iqpb6K/office_2016_5.png" draggable class="logo" style="top: 125px; left: 125px;">
+	<img src="https://preview.ibb.co/hGrZtz/office_2016_6.png" draggable class="logo" style="top: 125px; left: 245px;">
 
 	<img src="https://cdn.icon-icons.com/icons2/494/PNG/512/trash_icon-icons.com_48207.png" alt="" id="trash_bin">
+	<script src="js/trash-bin.js"></script>
 </body>
 </html>
+ 
+<!-- Перетаскивание всех элементов с классом logo.
+!!! При захвате элемента курсор должен быть в центре этого элемента.
+При захвате элемента необходимо присвоить этому элементу класс moving и удалить этот класс после отпускания элемента.
+Удалить элемент(display: none;), если он был отпущен в области корзины, которая имеет id trash_bin.
+ИнтерфейсА
+
+Элементы для перетаскивания имеют класс logo.
+Корзина имеет id trash_bin
+При захвате элемента курсор должен быть в центре этого элемента.
+При захвате элемента необходимо присвоить этому элементу класс moving и удалить этот класс после отпускания элемента.
+Удалить элемент(display: none;), если он был отпущен в области корзины.--> 
